@@ -1,36 +1,54 @@
 {
   "expo": {
-    "name": "PineHub",
+    "name": "AgroPine",
     "slug": "PineHub",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "pinehub",
+    "icon": "./assets/images/logo.png",
+    "scheme": "agropine",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow AgroPine to access your photos",
+        "NSCameraUsageDescription": "Allow AgroPine to access your camera"
+      },
+      "config": {
+        "googleMapsApiKey": "AIzaSyAsnGkiV8n2cQnK3xmtoj9NcjpIGxOWaUs"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA"
+      ],
+      "package": "com.tauhusoya.AgroPine",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAsnGkiV8n2cQnK3xmtoj9NcjpIGxOWaUs"
+        }
+      }
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/logo.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/logo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff",
@@ -38,11 +56,19 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "11e5322f-a152-40f5-bd06-d9880012e46d"
+      }
+    },
+    "owner": "hifzhan74"
   }
 }
